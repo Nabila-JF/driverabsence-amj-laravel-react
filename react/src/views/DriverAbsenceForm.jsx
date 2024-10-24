@@ -22,23 +22,42 @@ export default function DriverAbsenceForm() {
     const [drivers, setDrivers] = useState([]); // State untuk menyimpan daftar driver
     const [loading, setLoading] = useState(true); // State untuk loading
 
+    const fetchAllDrivers = async () => {
+        let allDrivers = [];
+        let currentPage = 1;
+        let hasMore = true;
+
+        while (hasMore) {
+            const response = await axiosClient.get(`/drivers?page=${currentPage}&limit=10`);
+            const { data } = response;
+
+            allDrivers = [...allDrivers, ...data.data]; // Gabungkan data driver
+            currentPage++;
+
+            // Jika halaman terakhir, hentikan pengambilan data
+            hasMore = data.data.length > 0;
+        }
+
+        return allDrivers;
+    };
+
     useEffect(() => {
-        // Mengambil data driver dari API
-        axiosClient.get('/drivers') // Pastikan endpoint ini benar
-            .then(({ data }) => {
-                // Map data driver ke format yang sesuai untuk react-select
-                const driverOptions = data.data.map((driver) => ({
+        setLoading(true);
+        fetchAllDrivers()
+            .then((driverData) => {
+                const driverOptions = driverData.map((driver) => ({
                     value: driver.name,
-                    label: driver.name
+                    label: driver.name,
                 }));
-                setDrivers(driverOptions); // Simpan data driver yang sudah di-format ke state
-                setLoading(false); // Selesai loading
+                setDrivers(driverOptions);
+                setLoading(false);
             })
-            .catch(error => {
-                console.error('Error fetching drivers:', error);
-                setLoading(false); // Selesai loading meski ada error
+            .catch((error) => {
+                console.error("Error fetching drivers:", error);
+                setLoading(false);
             });
-    }, []); // hanya dijalankan sekali saat komponen di-mount
+    }, []);
+
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });

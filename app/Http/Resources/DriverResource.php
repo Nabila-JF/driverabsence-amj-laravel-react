@@ -18,6 +18,7 @@ class DriverResource extends JsonResource
         return [
             'id' => $this -> id, 
             'name' => $this -> name, 
+            'nopol' => $this -> nopol, 
             'created_at' => $this -> created_at->format('Y-m-d H:i:s'), 
         ];
     }

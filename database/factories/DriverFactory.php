@@ -18,6 +18,7 @@ class DriverFactory extends Factory
     {
         return [
             'name' => fake()->name(),
+            'nopol' => fake()->name(),
         ];
     }
 }

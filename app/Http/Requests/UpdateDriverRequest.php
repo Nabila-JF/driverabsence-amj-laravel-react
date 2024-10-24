@@ -25,6 +25,7 @@ class UpdateDriverRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:250',
+            'nopol' => 'required|string|max:250',
         ];
     }
 }

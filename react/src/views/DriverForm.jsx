@@ -13,6 +13,7 @@ export default function DriverForm() {
     const [driver, setDriver] = useState({
         id: null,
         name: '',
+        nopol: '',
     })
 
     if (id) {
@@ -78,6 +79,11 @@ export default function DriverForm() {
                             value={driver.name}
                             onChange={ev => setDriver({ ...driver, name: ev.target.value })}
                             placeholder="Name"
+                        />
+                        <input
+                            value={driver.nopol}
+                            onChange={ev => setDriver({ ...driver, nopol: ev.target.value })}
+                            placeholder="Nomor Polisi"
                         />
 
                         <button className="btn">Save</button>
