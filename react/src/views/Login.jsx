@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { useState, createRef } from "react";
 import axiosClient from "../axios-client";
 import { useStateContext } from "../contexts/ContextProvider.jsx";
@@ -56,9 +56,9 @@ export default function Login() {
                     <input ref={emailRef} type="email" placeholder="Email" />
                     <input ref={passwordRef} type="password" placeholder="Password" />
                     <button className="btn btn-block">Login</button>
-                    <p className="message">
+                    {/* <p className="message">
                         Not Registered? <Link to="/signup">Create an account</Link>
-                    </p>
+                    </p> */}
                 </form>
             </div>
         </div>

@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import { Navigate } from "react-router-dom";
 import Login from "./views/Login.jsx";
-import Signup from "./views/Signup.jsx";
+// import Signup from "./views/Signup.jsx";
 import Users from "./views/Users.jsx";
 import Drivers from "./views/Drivers.jsx";
 import Dashboard from "./views/Dashboard.jsx";
@@ -66,16 +66,16 @@ const router = createBrowserRouter(
                 },
             ]
         },
-        {
-            path: '/',
-            element: <GuestLayout />,
-            children: [
-                {
-                    path: '/signup',
-                    element: <Signup />
-                },
-            ]
-        },
+        // {
+        //     path: '/',
+        //     element: <GuestLayout />,
+        //     children: [
+        //         {
+        //             path: '/signup',
+        //             element: <Signup />
+        //         },
+        //     ]
+        // },
         {
             path: '*',
             element: <NotFound />

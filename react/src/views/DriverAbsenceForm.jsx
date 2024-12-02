@@ -93,7 +93,10 @@ export default function DriverAbsenceForm() {
                 trip7: '',
                 trip8: '',
                 trip9: '',
-                trip10: ''
+                trip10: '',
+                trip11: '',
+                trip12: '',
+                trip13: '',
             });
 
         } catch (error) {
@@ -168,7 +171,7 @@ export default function DriverAbsenceForm() {
                     <div>
                         <input
                             type="text"
-                            placeholder='Trip 1'
+                            placeholder='Trip 1 (Pagi Hari)'
                             name="trip1"
                             value={formData.trip1}
                             onChange={handleChange}
@@ -177,7 +180,7 @@ export default function DriverAbsenceForm() {
                     <div>
                         <input
                             type="text"
-                            placeholder='Trip 2'
+                            placeholder='Trip 2 (Pagi Hari)'
                             name="trip2"
                             value={formData.trip2}
                             onChange={handleChange}
@@ -186,7 +189,7 @@ export default function DriverAbsenceForm() {
                     <div>
                         <input
                             type="text"
-                            placeholder='Trip 3'
+                            placeholder='Trip 3 (Pagi Hari)'
                             name="trip3"
                             value={formData.trip3}
                             onChange={handleChange}
@@ -252,6 +255,33 @@ export default function DriverAbsenceForm() {
                             placeholder='Trip 10'
                             name="trip10"
                             value={formData.trip10}
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div>
+                        <input
+                            type="text"
+                            placeholder='Trip 11'
+                            name="trip11"
+                            value={formData.trip11}
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div>
+                        <input
+                            type="text"
+                            placeholder='Trip 12'
+                            name="trip12"
+                            value={formData.trip12}
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div>
+                        <input
+                            type="text"
+                            placeholder='Trip 13'
+                            name="trip13"
+                            value={formData.trip13}
                             onChange={handleChange}
                         />
                     </div>
